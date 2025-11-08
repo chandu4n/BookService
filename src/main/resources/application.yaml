@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb; # Connects to an in-memory database named 'testdb'
+    driverClassName: org.h2.Driver
+    username: sa # Default H2 username
+    password: "" # Default H2 password (empty)
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # Or 'create', 'create-drop', 'none'
+    show-sql: true # Logs executed SQL queries to the console
+  h2:
+    console:
+      enabled: true # Enables the H2 console for web access
+      path: /h2-console # Specifies the URL path for the H2 console
+      settings:
+        web-allow-others: false # Disables remote access to the H2 console
+server:
+  servlet:
+    context-path: /book-service
